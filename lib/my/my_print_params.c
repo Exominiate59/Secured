@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-int main(int argc, char **argv)
+int my_print_params(int argc, char **argv)
 {
     int i = 0;
 
