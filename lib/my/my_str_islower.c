@@ -2,16 +2,20 @@
 ** EPITECH PROJECT, 2024
 ** my_str_islower
 ** File description:
-** search if the string contains lowercase alphabetical
+** my_str_islower
 */
 
 #include "my.h"
 
 int my_str_islower(char const *str)
 {
-    for (int i = 0; str[i]; i++) {
-        if (str[i] >= 97 && str[i] <= 122)
-            return 1;
+    int i;
+
+    if (str == NULL)
+        return 1;
+    for (i = 0; str[i] != '\0'; i++) {
+        if (str[i] < 'a' || str[i] > 'z')
+            return 0;
     }
-    return 0;
+    return 1;
 }
