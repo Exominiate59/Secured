@@ -1,21 +1,21 @@
 /*
 ** EPITECH PROJECT, 2024
-** my_evil_str
+** my_revstr
 ** File description:
-** reverse str two by two
+** reverse string
 */
 
 #include "my.h"
 
 char *my_revstr(char *str)
 {
-    int temp;
-    int length = my_strlen(str);
+    int size = my_strlen(str);
+    int swap;
 
-    for (int i = 0; i < length / 2; i++) {
-        temp = str[i];
-        str[i] = str[length - i - 1];
-        str[length - i -1] = temp;
+    for (int temp = 0; temp < size / 2; temp++) {
+        swap = str[temp];
+        str[temp] = str[size - temp - 1];
+        str[size - temp - 1] = swap;
     }
     return str;
 }

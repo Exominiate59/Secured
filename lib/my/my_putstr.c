@@ -2,19 +2,18 @@
 ** EPITECH PROJECT, 2024
 ** my_putstr
 ** File description:
-** display characters of a string
+** print string
 */
-
-#include "my.h"
 
 #include "my.h"
 
 int my_putstr(char const *str)
 {
-    int i;
-
-    for (i = 0; str[i] != '\0'; i++) {
-        my_putchar(str[i]);
+    if (str == NULL) {
+        my_putstr("(null)");
+        return 0;
     }
-    return (0);
+    for (int i = 0; str[i]; i++)
+        my_putchar(str[i]);
+    return 0;
 }
