@@ -33,6 +33,7 @@ SRC	=	my_compute_power_rec.c\
 		my_strupcase.c\
 		my_swap.c\
 		my_strdup.c\
+		mini_printf.c
 
 OBJ	=	$(SRC:.c=.o)
 
