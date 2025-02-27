@@ -29,8 +29,8 @@ clean :
 
 fclean :
 	rm -f $(EXE_NAME)
-	rm -f lib/my/*.o
 	rm -f src/*.o
+	rm -f lib/my/*.o
 	rm -f lib/libmy.a
 	rm -f lib/my/libmy.a
 
