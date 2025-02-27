@@ -2,16 +2,21 @@
 ** EPITECH PROJECT, 2024
 ** my_str_isalpha
 ** File description:
-** search if the string contains alphabetical character
+** alpha
 */
 
 #include "my.h"
 
 int my_str_isalpha(char const *str)
 {
-    for (int i = 0; str[i]; i++) {
-        if ((str[i] >= 97 && str[i] <= 122) || (str[i] >= 90 && str[i] <= 65))
-            return 1;
+    int i;
+
+    if (str == NULL)
+        return 1;
+    for (i = 0; str[i] != '\0'; i++) {
+        if ((str[i] < 'a' || str[i] > 'z') &&
+            (str[i] < 'A' || str[i] > 'Z'))
+            return 0;
     }
-    return 0;
+    return 1;
 }

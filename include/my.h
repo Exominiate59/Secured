@@ -19,9 +19,9 @@
 
 #ifndef MY_LIB
     #define MY_LIB
-char my_putchar(char c);
+void my_putchar(char c);
 int my_isneg(int nb);
-int my_put_nbr(long long nb);
+int my_put_nbr(int nb);
 void my_swap(int *a, int *b);
 int my_putstr(char const *str);
 int my_strlen(char const *str);
@@ -101,4 +101,5 @@ int my_countabs(unsigned int);
 int my_count_pointer(void *ptr);
 int my_count_oct(unsigned int nb);
 int my_put_positif(int nb);
+char *my_strdup(char const *src);
 #endif
