@@ -45,4 +45,3 @@ int ht_insert(hashtable_t *ht, char *key, char *value)
     }
     return insert_new_node(ht, key, value, hash_value);
 }
-
