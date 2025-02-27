@@ -10,15 +10,7 @@
 
     #include "my.h"
 
-typedef struct hashnode_s {
-    char *key;
-    char *value;
-    struct hashnode *next;  
-} hashnode_t;
-
 typedef struct hashtable_s {
-    int len;
-    hashnode_t *node;
 } hashtable_t;
 
 hashtable_t *new_hashtable(int (*hash)(char *, int), int len);

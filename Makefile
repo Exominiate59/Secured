@@ -6,6 +6,7 @@
 ##
 
 SRC	=	src/main.c \
+		src/hash.c \
 
 OBJ	=	$(SRC:.c=.o)
 
