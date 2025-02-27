@@ -35,9 +35,10 @@ int ht_insert(hashtable_t *ht, char *key, char *value)
     index = hash_value % ht->len;
     current = ht->node[index];
     while (current) {
-        if (my_strcmp(current->key, key) == 0) {
-            free(current->key);
-            current->value = value;
+        if (hash_value == current->hash_value
+            && my_strcmp(current->key, key) == 0) {
+            free(current->value);
+            current->value = my_strdup(value);
             return 0;
         }
         current = current->next;
