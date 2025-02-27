@@ -31,7 +31,7 @@ int ht_delete(hashtable_t *ht, char *key)
 
     if (!ht || !key || !ht->node)
         return 84;
-    hash_value = hash(key, ht->len);
+    hash_value = ht->hash(key, ht->len);
     index = hash_value % ht->len;
     current = ht->node[index];
     while (current) {
