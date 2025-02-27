@@ -28,7 +28,7 @@ all:	$(EXE_NAME)
 $(EXE_NAME): $(OBJ)
 	make -C ../lib/my/
 	ar rc $(EXE_NAME) $(OBJ)
-	cp $(EXE_NAME) ../.
+	mv $(EXE_NAME) ../.
 
 clean :
 	rm -f $(OBJ)
