@@ -1,14 +1,13 @@
 /*
 ** EPITECH PROJECT, 2024
-** my_putchar
+** fssd
 ** File description:
-** write char
+** scg
 */
 
-#include <unistd.h>
 #include "my.h"
 
-char my_putchar(char c)
+void my_putchar(char c)
 {
-    return write(1, &c, 1);
+    write(1, &c, 1);
 }

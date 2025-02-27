@@ -1,12 +1,11 @@
 /*
 ** EPITECH PROJECT, 2024
-** my_strdup
+** my_str_to_word_array
 ** File description:
-** allocate memory
+** my_str_to_word_array
 */
 
 #include "my.h"
-#include <stddef.h>
 
 static int my_str_isalphanum(char c)
 {
