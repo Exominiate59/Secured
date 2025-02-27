@@ -24,6 +24,5 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
     }
     for (int i = 0; i < len; i++)
         new_hashtable->node[i] = NULL;
-    printf("new hashtable created\n");
     return new_hashtable;
 }
