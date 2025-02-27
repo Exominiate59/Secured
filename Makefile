@@ -11,10 +11,11 @@ SRC	=	src/main.c \
 		src/delete_hashtable.c \
 		src/ht_insert.c \
 		src/ht_delete.c \
+		src/ht_search.c
 
 OBJ	=	$(SRC:.c=.o)
 
-EXE_NAME	=	libhashtable.a
+EXE_NAME	=	secured
 
 INCLUDE	=	-I./include/
 
@@ -26,7 +27,7 @@ all:	$(EXE_NAME)
 
 $(EXE_NAME): $(OBJ)
 	make -C ./lib/my/
-	ar rc $(EXE_NAME) $(OBJ)
+	gcc -o $(EXE_NAME) $(OBJ) $(LIB)
 
 clean :
 	rm -f $(OBJ)
