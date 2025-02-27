@@ -11,7 +11,8 @@ SRC	=	src/main.c \
 		src/delete_hashtable.c \
 		src/ht_insert.c \
 		src/ht_delete.c \
-		src/ht_search.c
+		src/ht_search.c\
+		src/ht_dump.c
 
 OBJ	=	$(SRC:.c=.o)
 
