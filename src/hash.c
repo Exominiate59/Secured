@@ -17,5 +17,5 @@ int hash(char *key, int len)
         hash_value = (hash_value * 31) + key[i];
         hash_value ^= (hash_value >> 15);
     }
-    return (int)(hash_value % len);
+    return (int)(hash_value) > 0 ? (int)(hash_value) : -(int)(hash_value);
 }
