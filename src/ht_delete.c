@@ -18,7 +18,6 @@ int delete_node(hashtable_t *ht, hashnode_t *current,
         ht->node[index] = current->next;
     free(current->key);
     free(current->value);
-    free(current->hash_value);
     free(current);
     return 0;
 }
@@ -36,8 +35,8 @@ int ht_delete(hashtable_t *ht, char *key)
     index = hash_value % ht->len;
     current = ht->node[index];
     while (current) {
-        if (my_strcmp(current->key, key) == 0)
-            return delete(ht, current, prev, index);
+        if (hash_value == current->hash_value)
+            return delete_node(ht, current, prev, index);
         prev = current;
         current = current->next;
     }
