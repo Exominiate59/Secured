@@ -7,7 +7,7 @@
 
 #include "hashtable.h"
 
-int is_there_key(hashtable_t *ht, hashnode_t *current,
+int delete_node(hashtable_t *ht, hashnode_t *current,
     hashnode_t *prev, int index)
 {
     if (!ht || !current)
@@ -37,7 +37,7 @@ int ht_delete(hashtable_t *ht, char *key)
     current = ht->node[index];
     while (current) {
         if (my_strcmp(current->key, key) == 0)
-            return is_there_key(ht, current, prev, index);
+            return delete(ht, current, prev, index);
         prev = current;
         current = current->next;
     }
