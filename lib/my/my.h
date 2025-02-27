@@ -101,4 +101,5 @@ int my_countabs(unsigned int);
 int my_count_pointer(void *ptr);
 int my_count_oct(unsigned int nb);
 int my_put_positif(int nb);
+char *my_strdup(char const *src);
 #endif

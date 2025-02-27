@@ -27,7 +27,6 @@ int ht_delete(hashtable_t *ht, char *key)
                 ht->node[index] = current->next;
             free(current->key);
             free(current->value);
-            free(current->hash_value);
             free(current);
             return 0;
         }
