@@ -9,8 +9,8 @@
 
 void delete_hashtable(hashtable_t *ht)
 {
-    hashnode_t *current;
-    hashnode_t *temp;
+    hashnode_t *current = NULL;
+    hashnode_t *temp = NULL;
 
     if (!ht)
         return;
