@@ -7,6 +7,10 @@
 
 SRC	=	src/main.c \
 		src/hash.c \
+		src/new_hashtable.c \
+		src/delete_hashtable.c \
+		src/ht_insert.c \
+		src/ht_delete.c \
 
 OBJ	=	$(SRC:.c=.o)
 
