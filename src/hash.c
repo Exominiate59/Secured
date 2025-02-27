@@ -36,5 +36,5 @@ int hash(char *key, int len)
         total += transformed;
     }
     mixed_total = (total ^ (total >> 16)) & 0xFFFFFFFF;
-    return mixed_total % len;
+    return mixed_total % (int)my_compute_power_it(10, len);
 }
