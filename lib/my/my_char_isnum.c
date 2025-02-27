@@ -7,11 +7,9 @@
 
 #include "my.h"
 
-int my_str_isnum(char const *str)
+int my_char_isnum(char carac)
 {
-    for (int i = 0; str[i]; i++) {
-        if ((str[i] >= 48 && str[i] <= 57))
-            return 1;
-    }
+    if (carac >= 48 && carac <= 57)
+        return 1;
     return 0;
 }

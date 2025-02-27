@@ -2,20 +2,16 @@
 ** EPITECH PROJECT, 2024
 ** my_str_isupper
 ** File description:
-** my_str_isupper
+** search if the string contains uppercase alphabetical
 */
 
 #include "my.h"
 
 int my_str_isupper(char const *str)
 {
-    int i;
-
-    if (str == NULL)
-        return 1;
-    for (i = 0; str[i] != '\0'; i++) {
-        if (str[i] < 'A' || str[i] > 'Z')
-            return 0;
+    for (int i = 0; str[i]; i++) {
+        if (str[i] >= 65 && str[i] <= 90)
+            return 1;
     }
-    return 1;
+    return 0;
 }
