@@ -9,7 +9,7 @@
 
 char *ht_search(hashtable_t *ht, char *key)
 {
-     int hash_value = 0;
+    int hash_value = 0;
     int index = 0;
     hashnode_t *current = NULL;
 
