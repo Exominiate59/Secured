@@ -5,7 +5,7 @@
 ** do the flag s, c, d and i of printf
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 void verif_spec(char format, va_list arg)
 {

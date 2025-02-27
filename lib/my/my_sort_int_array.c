@@ -5,7 +5,7 @@
 ** sort number in array
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 static void verif_swap(int *n1, int *n2)
 {

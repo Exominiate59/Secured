@@ -5,7 +5,7 @@
 ** ptint a float decimal
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 int my_putfloat(double freq)
 {

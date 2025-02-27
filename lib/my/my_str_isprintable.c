@@ -5,7 +5,7 @@
 ** search if the string contains all printable characters
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 int my_str_isprintable(char const *str)
 {

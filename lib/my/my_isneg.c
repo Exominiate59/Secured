@@ -5,7 +5,7 @@
 ** print if the number is positif or negatif
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 int my_isneg(int n)
 {

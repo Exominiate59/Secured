@@ -6,7 +6,7 @@
 */
 
 #include <stddef.h>
-#include "../../include/my.h"
+#include "my.h"
 
 static char *search_word(char *str, char const *to_find, int i,
     int len_to_find)

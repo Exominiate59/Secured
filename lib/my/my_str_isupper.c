@@ -5,7 +5,7 @@
 ** search if the string contains uppercase alphabetical
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 int my_str_isupper(char const *str)
 {

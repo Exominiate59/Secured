@@ -5,7 +5,7 @@
 ** search if the string contains digits
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 int my_str_isnum(char const *str)
 {

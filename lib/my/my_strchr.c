@@ -5,7 +5,7 @@
 ** concatenates 2 strings
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 char *my_strchr(const char *str, int chara)
 {

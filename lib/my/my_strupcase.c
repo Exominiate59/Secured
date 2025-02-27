@@ -5,7 +5,7 @@
 ** put word in uppercase
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 char *my_strupcase(char *str)
 {

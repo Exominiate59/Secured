@@ -5,7 +5,7 @@
 ** allocate memory
 */
 
-#include "../../include/my.h"
+#include "my.h"
 #include <stddef.h>
 
 static int my_str_isalphanum(char c)

@@ -6,7 +6,6 @@
 */
 
 #include "hashtable.h"
-#include "my.h"
 
 int main(void)
 {

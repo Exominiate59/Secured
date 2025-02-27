@@ -5,7 +5,7 @@
 ** search if the string contains lowercase alphabetical
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 int my_str_islower(char const *str)
 {

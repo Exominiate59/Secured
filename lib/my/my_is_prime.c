@@ -5,7 +5,7 @@
 ** program that return 1 if the number is prime else 0
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 int my_is_prime(int nb)
 {

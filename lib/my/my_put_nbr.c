@@ -5,7 +5,7 @@
 ** print number
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 static void print_overflow(void)
 {
