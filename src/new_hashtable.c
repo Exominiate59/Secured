@@ -15,7 +15,6 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
         return 84;
     new_hashtable->len = len;
     new_hashtable->node = malloc(len * sizeof(hashnode_t));
-    new_hashtable->hash = hash;
     if (!new_hashtable->node) {
         free(new_hashtable);
         return 84;

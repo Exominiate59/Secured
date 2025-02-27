@@ -2,36 +2,46 @@
 ** EPITECH PROJECT, 2024
 ** my_strstr
 ** File description:
-** my_strstr
+** find word in string
 */
 
+#include <stddef.h>
 #include "my.h"
 
-static int next(char *str, char const *to_find, int i)
+static char *search_word(char *str, char const *to_find, int i,
+    int len_to_find)
 {
-    int j = 0;
+    int j;
 
-    while (to_find[j] != '\0') {
-        if (str[i] != to_find[j])
-            return (0);
-        i++;
-        j++;
+    for (j = 0; j < len_to_find; j++) {
+        if (str[i + j] != to_find[j])
+            return NULL;
     }
-    return (1);
+    return &str[i];
+}
+
+static char *str_next(char *str, char const *to_find, int i, int len_to_find)
+{
+    char *result;
+
+    if (str[i] == to_find[0]) {
+        result = search_word(str, to_find, i, len_to_find);
+        if (result != NULL)
+            return result;
+    }
+    return result;
 }
 
 char *my_strstr(char *str, char const *to_find)
 {
-    int i = 0;
-    int len_str = my_strlen(str);
-    int len_fd = my_strlen(to_find);
+    int len_to_find = my_strlen(to_find);
+    int len_str = my_strlen(str) - 1;
 
-    if (len_str < len_fd)
+    if (*to_find == '\0')
+        return str;
+    if (len_str < len_to_find)
         return NULL;
-    while (str[i] != '\0') {
-        if (next(str, to_find, i) == 1)
-            return &str[i];
-        i++;
-    }
-    return (0);
+    for (int i = 0; i <= len_str - len_to_find; i++)
+        str_next(str, to_find, i, len_to_find);
+    return NULL;
 }
