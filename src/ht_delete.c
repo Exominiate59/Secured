@@ -35,7 +35,8 @@ int ht_delete(hashtable_t *ht, char *key)
     index = hash_value % ht->len;
     current = ht->node[index];
     while (current) {
-        if (hash_value == current->hash_value)
+        if (hash_value == current->hash_value
+            && my_strcmp(current->key, key) == 0)
             return delete_node(ht, current, prev, index);
         prev = current;
         current = current->next;
