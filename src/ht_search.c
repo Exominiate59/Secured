@@ -13,16 +13,19 @@ char *ht_search(hashtable_t *ht, char *key)
     int index = 0;
     hashnode_t *current = NULL;
 
-    if (!ht || !key)
+    if (!ht || !key || !ht->node)
         return NULL;
     hash_value = hash(key, ht->len);
     index = hash_value % ht->len;
     current = ht->node[index];
     while (current) {
         if (hash_value == current->hash_value
-            && my_strcmp(current->key, key) == 0)
+            && my_strcmp(current->key, key) == 0) {
+                printf("valid\n");
                 return current->value;
+            }
         current = current->next;
     }
+    printf("No valid\n");
     return NULL;
 }

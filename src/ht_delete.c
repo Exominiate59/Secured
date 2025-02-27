@@ -29,7 +29,7 @@ int ht_delete(hashtable_t *ht, char *key)
     hashnode_t *current = NULL;
     hashnode_t *prev = NULL;
 
-    if (!ht || !key)
+    if (!ht || !key || !ht->node)
         return 84;
     hash_value = hash(key, ht->len);
     index = hash_value % ht->len;
