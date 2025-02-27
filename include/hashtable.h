@@ -14,7 +14,7 @@ typedef struct hashnode_s {
     char *key;
     char *value;
     int hash_value;
-    struct hashnode_s *next;
+    struct hashnode_s *next;  
 } hashnode_t;
 
 typedef struct hashtable_s {

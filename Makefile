@@ -5,17 +5,15 @@
 ## for compilation
 ##
 
-SRC	=	src/hash.c \
-		src/new_hashtable.c \
-		src/delete_hashtable.c \
-		src/ht_insert.c \
-		src/ht_delete.c \
-		src/ht_search.c\
-		src/ht_dump.c
+SRC	= main.c
 
 OBJ	=	$(SRC:.c=.o)
 
 EXE_NAME	=	libhashtable.a
+
+LIBMY = libmy.a
+
+HASHTABLE = hashtable.a
 
 INCLUDE	=	-I./include/
 
@@ -25,15 +23,18 @@ CFLAGS	+=	-Wall -Wextra ${INCLUDE}
 
 all:	$(EXE_NAME)
 
-$(EXE_NAME): $(OBJ)
+$(EXE_NAME):
 	make -C ./lib/my/
-	ar rc $(EXE_NAME) $(OBJ)
+	make -C ./src/
+	ar rcT $(EXE_NAME) $(LIBMY) $(HASHTABLE)
 
 clean :
 	rm -f $(OBJ)
 
 fclean :
 	rm -f $(EXE_NAME)
+	rm -f $(LIBMY)
+	rm -f $(HASHTABLE)
 	rm -f src/*.o
 	rm -f lib/my/*.o
 	rm -f lib/libmy.a
