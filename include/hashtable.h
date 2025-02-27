@@ -13,11 +13,13 @@
 typedef struct hashnode_s {
     char *key;
     char *value;
+    int hash_value;
     struct hashnode *next;  
 } hashnode_t;
 
 typedef struct hashtable_s {
     int len;
+    int (*hash)(char *, int);
     hashnode_t **node;
 } hashtable_t;
 
