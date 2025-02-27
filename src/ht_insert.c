@@ -29,7 +29,7 @@ int ht_insert(hashtable_t *ht, char *key, char *value)
     int index = 0;
     hashnode_t *current = NULL;
 
-    if (!ht || !key || !value)
+    if (!ht || !key || my_strlen(key) == 0 || !value)
         return 84;
     hash_value = ht->hash(key, ht->len);
     index = hash_value % ht->len;
