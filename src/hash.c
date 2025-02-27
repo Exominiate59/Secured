@@ -9,13 +9,15 @@
 
 int hash(char *key, int len)
 {
-    unsigned long hash_value = 0;
-
     if (!key || len <= 0)
         return 84;
+
+    unsigned long hash_value = 0;
+
     for (int i = 0; key[i]; i++) {
         hash_value = (hash_value * 31) + key[i];
         hash_value ^= (hash_value >> 15);
     }
     return (int)(hash_value % 10000000);
 }
+
