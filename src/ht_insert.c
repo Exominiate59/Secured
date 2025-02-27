@@ -22,8 +22,6 @@ int insert_new_node(hashtable_t *ht, char *key,
     new_node->hash_value = hash_value;
     new_node->next = ht->node[index];
     ht->node[index] = new_node;
-    free(new_key);
-    free(new_value);
     return 0;
 }
 
