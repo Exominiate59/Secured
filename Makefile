@@ -5,39 +5,46 @@
 ## for compilation
 ##
 
-SRC	= main.c
+SRC	= ./src/main.c
 
 OBJ	=	$(SRC:.c=.o)
 
-EXE_NAME	=	libhashtable.a
+EXE_NAME	=	secured
 
 LIBMY = libmy.a
 
 HASHTABLE = hashtable.a
 
+LIBHASHTABLE = libhashtable.a
+
 INCLUDE	=	-I./include/
 
-LIB = -L./lib/my/ -lmy
+LIB = -L./lib/my/ -lmy -L. -lhashtable
 
 CFLAGS	+=	-Wall -Wextra ${INCLUDE}
 
-all:	$(EXE_NAME)
+all:	$(LIBHASHTABLE)
 
-$(EXE_NAME):
+$(LIBHASHTABLE):
 	make -C ./lib/my/
 	make -C ./src/
-	ar rcT $(EXE_NAME) $(LIBMY) $(HASHTABLE)
+	ar rcT $(LIBHASHTABLE) $(LIBMY) $(HASHTABLE)
 
-clean :
+debug:	$(LIBHASHTABLE) $(OBJ)
+	gcc -o $(EXE_NAME) $(OBJ) -L. -lhashtable -g
+
+clean:
 	rm -f $(OBJ)
 
-fclean :
+fclean: clean
 	rm -f $(EXE_NAME)
 	rm -f $(LIBMY)
 	rm -f $(HASHTABLE)
+	rm -f $(LIBHASHTABLE)
 	rm -f src/*.o
 	rm -f lib/my/*.o
 	rm -f lib/libmy.a
 	rm -f lib/my/libmy.a
+	make -C ./src fclean
 
 re : fclean all
