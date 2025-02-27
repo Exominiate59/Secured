@@ -15,6 +15,8 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
         return NULL;
     new_hashtable->len = len;
     new_hashtable->node = malloc(len * sizeof(hashnode_t *));
+    for (int i = 0; i < len; i++)
+        new_hashtable->node[i] = NULL;
     new_hashtable->hash = hash;
     if (!new_hashtable->node) {
         free(new_hashtable);
@@ -22,5 +24,6 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
     }
     for (int i = 0; i < len; i++)
         new_hashtable->node[i] = NULL;
+    printf("new hashtable created\n");
     return new_hashtable;
 }
