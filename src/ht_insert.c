@@ -12,14 +12,18 @@ int insert_new_node(hashtable_t *ht, char *key,
 {
     int index = hash_value % ht->len;
     hashnode_t *new_node = malloc(sizeof(hashnode_t));
+    char *new_key = my_strdup(key);
+    char *new_value = my_strdup(value);
 
-    if (!new_node)
+    if (!new_node || !new_key || !new_value)
         return 84;
-    new_node->key = my_strdup(key);
-    new_node->value = my_strdup(value);
+    new_node->key = new_key;
+    new_node->value = new_value;
     new_node->hash_value = hash_value;
     new_node->next = ht->node[index];
     ht->node[index] = new_node;
+    free(new_key);
+    free(new_value);
     return 0;
 }
 
