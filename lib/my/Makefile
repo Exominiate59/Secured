@@ -39,16 +39,12 @@ OBJ	=	$(SRC:.c=.o)
 
 NAME	=	libmy.a
 
-HEADER	=	my.h
-
-CFLAGS	+=	-Wall -Wextra
-
 all:	$(NAME)
 
 $(NAME): $(OBJ)
-	gcc -c $(SRC)
-	ar rcs $(NAME) $(OBJ)
-	cp $(NAME) ../$(NAME)
+	ar rc $(NAME) $(OBJ)
+	mv $(NAME) ../../.
+	cp my.h ../../include/
 	make clean
 
 clean:
